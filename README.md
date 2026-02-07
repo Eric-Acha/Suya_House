@@ -21,3 +21,6 @@ A simple e-commerce web application for ordering suya online.
 ```bash
 pip install flask
 python app.py
+
+## Screenshots
+![Home Page](static/suya.jpg)
