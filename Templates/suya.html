@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUYA HOUSE</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icons8-kebab-50.png')}}">
+</head>
+
+<body>
+    <header>
+        <h1>SUYA HOUSE</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-item" data-id="1">
+            <h3>Beef Suya with Rice</h3>
+            <p>$12</p>
+            <button onclick="addToCart(1, 'Beef Suya with Rice', 12)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-id="2">
+            <h3>Lamp Suya with Vegetables</h3>
+            <p>$13</p>
+            <button onclick="addToCart(2, 'Lamp Suya with Vegetables', 13)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-id="3">
+            <h3>Chicken Suya with Fried Plantain</h3>
+            <p>$11</p>
+            <button onclick="addToCart(3, 'Chicken Suya with Fried Plantain', 11)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-id="4">
+            <h3>Fish Suya with Rice</h3>
+            <p>$14</p>
+            <button onclick="addToCart(4, 'Fish Suya with Rice', 14)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-id="5">
+            <h3>Pork Suya with Fried Plantain</h3>
+            <p>$13</p>
+            <button onclick="addToCart(5, 'Pork Suya with Fried Plantain', 13)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-id="6">
+            <h3>Juice</h3>
+            <p>$4</p>
+            <button onclick="addToCart(6, 'Juice', 4)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-id="7">
+            <h3>Alcohol</h3>
+            <p>$6</p>
+            <button onclick="addToCart(7, 'Alcohol', 6)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section id="order">
+        <h2>Your Order</h2>
+        <ul id="cart"></ul>
+        <p>Total: $<span id="total">0</span></p>
+        <form id="checkoutForm" method="POST" action="http://localhost:5000/submit_order">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="hidden" name="order_data" id="order_data">
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form action="/contact" method="POST" class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>
