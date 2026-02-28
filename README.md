@@ -23,4 +23,4 @@ pip install flask
 python app.py
 
 ## Screenshots
-![Home Page](static/suya.jpg)
+![Main Page](static/suya.jpg)
